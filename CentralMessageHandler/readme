@@ -1,0 +1,35 @@
+http://crunchify.com/how-to-build-restful-service-with-java-using-jax-rs-and-jersey/
+http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html#undefined
+
+1) pom.xml has <sourceDirectory>src</sourceDirectory> 
+doesn't match standard package structure src/main/java for maven
+
+2) create a package/folder structure below src directory e.g. com.kwi.centralmessage
+3) add the root resource class here
+
+3) This didn't work but it was interesting
+The ResourceConfig instance does not contain any root resource classes
+-Project structure not right. 
+	Removed old src folder
+	Created src/main/java
+	Created folders for new class (i.e. com kwi centralmessage 
+	
+4) launch configurations from menu bar for quickness and you can set up favorites also.
+
+5) to run..crunchify is from web.xml
+		centralmessageservice is the path variable in the main resource class
+		 
+	http://localhost:8080/CentralMessageHandler/crunchify/centralmessageservice
+	
+6) http://stackoverflow.com/questions/6922391/the-server-does-not-support-version-3-0-of-the-j2ee-web-module-specification
+  Got this when i tried to deploy to tomcat 7.0
+  
+  	i fixed by re-creating project... Dynamic Web module version on project creation tomcat supports up to 2.5
+   
+	Didn't have to do this but it was interesting...
+	Tomcat is not a Java EE compliant application server, so you won't have EJB or CDI out-of-the-box here. 
+	Instead, use JBoss Wildfly or TomEE which are built on top of tomcat. Or, change to a complete different Java EE implementation like GlassFish.   
+   
+7) project/maven/update to build maven dependencies libraries under java resoueces like a refresh
+
+
